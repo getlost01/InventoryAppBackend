@@ -15,7 +15,7 @@ app.use(cors());
 
 connectdb();
 app.listen(process.env.PORT || 8080, function(){
-    console.log("➡️ UIET Connect listening on port %d in %s mode 👍", this.address().port, app.settings.env);
+    console.log("➡️ InventoryApp listening on port %d in %s mode 👍", this.address().port, app.settings.env);
 });
 
 // routes
