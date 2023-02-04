@@ -43,9 +43,7 @@ router.post("/", async (req, res) => {
 				.send({ message: "An Email sent to your account please verify" });
 		}
 		const token = user.generateAuthToken();
-		var role = user.role;
-		if(role != "admin") role = "member";
-		res.status(200).send({ data: token,role, message: "logged in successfully" });
+		res.status(200).send({ data: token,role:((user.role != "admin")?"admin":"member"), message: "logged in successfully" });
 	} catch (error) {
 		res.status(500).send({ message: "Internal Server Error" });
 	}
